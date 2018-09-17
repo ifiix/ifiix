@@ -1,7 +1,7 @@
 <?php
  
 // get database connection
-include_once '../config/database.php';
+include_once 'database.php';
  
 // instantiate user object
 include_once '../objects/user.php';
