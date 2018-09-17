@@ -1,37 +1,36 @@
 <?php
-session_start();
-$message="";
-if(count($_POST)>0) {
-$con = mysqli_connect('127.0.0.1:3306','root','','admin') or die('Unable To connect');
-$result = mysqli_query($con,"SELECT * FROM login_user WHERE name='" . $_POST["name"] . "' and password = '". $_POST["password"]."'");
-$row = mysqli_fetch_array($result);
-if(is_array($row)) {
-$_SESSION["id"] = $row[id];
-$_SESSION["name"] = $row[name];
-} else {
-$message = "Invalid Username or Password!";
+// include database and object files
+include_once '../config/database.php';
+include_once '../objects/user.php';
+ 
+// get database connection
+$database = new Database();
+$db = $database->getConnection();
+ 
+// prepare user object
+$user = new User($db);
+// set ID property of user to be edited
+$user->username = isset($_GET['username']) ? $_GET['username'] : die();
+$user->password = base64_encode(isset($_GET['password']) ? $_GET['password'] : die());
+// read the details of user to be edited
+$stmt = $user->login();
+if($stmt->rowCount() > 0){
+    // get retrieved row
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    // create array
+    $user_arr=array(
+        "status" => true,
+        "message" => "Successfully Login!",
+        "id" => $row['id'],
+        "username" => $row['username']
+    );
 }
+else{
+    $user_arr=array(
+        "status" => false,
+        "message" => "Invalid Username or Password!",
+    );
 }
-if(isset($_SESSION["id"])) {
-header("Location:index.php");
-}
+// make it json format
+print_r(json_encode($user_arr));
 ?>
-<html>
-<head>
-<title>User Login</title>
-</head>
-<body>
-<form name="frmUser" method="post" action="" align="center">
-<div class="message"><?php if($message!="") { echo $message; } ?></div>
-<h3 align="center">Enter Login Details</h3>
-Username:<br>
-<input type="text" name="name">
-<br>
-Password:<br>
-<input type="password" name="password">
-<br><br>
-<input type="submit" name="submit" value="Submit">
-<input type="reset">
-</form>
-</body>
-</html>
