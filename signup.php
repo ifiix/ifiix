@@ -4,7 +4,7 @@
 include_once 'database.php';
  
 // instantiate user object
-include_once '../objects/user.php';
+include_once 'user.php';
  
 $database = new Database();
 $db = $database->getConnection();
