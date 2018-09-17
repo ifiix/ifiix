@@ -2,10 +2,10 @@
 class Database{
  
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "PHPLearning";
-    private $username = "root";
-    private $password = "";
+    private $host = "	sql108.epizy.com";
+    private $db_name = "epiz_22681180_users";
+    private $username = "epiz_22681180";
+    private $password = "akmQxfuIKXc";
     public $conn;
  
     // get the database connection
