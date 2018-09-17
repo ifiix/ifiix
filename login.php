@@ -31,6 +31,3 @@ else{
         "message" => "Invalid Username or Password!",
     );
 }
-// make it json format
-print_r(json_encode($user_arr));
-?>
