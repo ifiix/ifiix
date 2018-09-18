@@ -10,12 +10,13 @@ $(document).ready(function(){
   }
   //initialize the firebase app
   var config = {
-    apiKey: "AIzaSyCKNcULQZxFMYioXei32XNWQVoeutz4XDA",
-    authDomain: "contact-book-new.firebaseapp.com",
-    databaseURL: "https://contact-book-new.firebaseio.com",
-    projectId: "contact-book-new",
-    storageBucket: "contact-book-new.appspot.com",
-    messagingSenderId: "473268388365"
+   var config = {
+    apiKey: "AIzaSyBA_t8njQyMt-QnowKl7q_I7qwmHK7zzGs",
+    authDomain: "ifiix-208405.firebaseapp.com",
+    databaseURL: "https://ifiix-208405.firebaseio.com",
+    projectId: "ifiix-208405",
+    storageBucket: "ifiix-208405.appspot.com",
+    messagingSenderId: "938449920424"
   };
   firebase.initializeApp(config);
 
