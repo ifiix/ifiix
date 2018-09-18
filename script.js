@@ -10,12 +10,12 @@ $(document).ready(function(){
   }
   //initialize the firebase app
  var config = {
-    apiKey: "AIzaSyCKNcULQZxFMYioXei32XNWQVoeutz4XDA",
-    authDomain: "contact-book-new.firebaseapp.com",
-    databaseURL: "https://contact-book-new.firebaseio.com",
-    projectId: "contact-book-new",
-    storageBucket: "contact-book-new.appspot.com",
-    messagingSenderId: "473268388365"
+    apiKey: "AIzaSyAqZc0pBaKzcY8oQhRSieGqSBjdsGbSqQ8",
+    authDomain: "ifiix-user-login.firebaseapp.com",
+    databaseURL: "https://ifiix-user-login.firebaseio.com",
+    projectId: "ifiix-user-login",
+    storageBucket: "ifiix-user-login.appspot.com",
+    messagingSenderId: "455760405617"
   };
   firebase.initializeApp(config);
 
