@@ -9,13 +9,13 @@ $(document).ready(function(){
     forgotPassword: '#forgotPasswordForm',
   }
   //initialize the firebase app
-  var config = {
-    apiKey: "AIzaSyD3euSDnar5GhE6rQc16VyxAWzA0v13ifc",
-    authDomain: "contact-book-new-14ba8.firebaseapp.com",
-    databaseURL: "https://contact-book-new-14ba8.firebaseio.com",
-    projectId: "contact-book-new-14ba8",
-    storageBucket: "contact-book-new-14ba8.appspot.com",
-    messagingSenderId: "1065765438063"
+ var config = {
+    apiKey: "AIzaSyCKNcULQZxFMYioXei32XNWQVoeutz4XDA",
+    authDomain: "contact-book-new.firebaseapp.com",
+    databaseURL: "https://contact-book-new.firebaseio.com",
+    projectId: "contact-book-new",
+    storageBucket: "contact-book-new.appspot.com",
+    messagingSenderId: "473268388365"
   };
   firebase.initializeApp(config);
 
