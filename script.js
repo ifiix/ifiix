@@ -164,13 +164,7 @@ $(document).ready(function(){
   })
 
   // Prevent User from adding contact if email is not verified
-  $('#addContactModalTrigger').on('click', function(e) {
-    if(!user.emailVerified) {
-      e.stopPropagation()
-      e.target.classList.add('btn-danger')
-      setTimeout(function() {
-        e.target.classList.remove('btn-danger')
-      }, 500);
+ 
     }
   })
 
