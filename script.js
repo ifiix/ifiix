@@ -232,6 +232,10 @@ $(document).ready(function(){
     }
   }
 });
+firebase.auth().currentUser.updateProfile({
+  displayName: 'Time to Hack',
+  photoURL: 'https://time2hack.com/favicon.png'
+});
 const profileData = {
   displayName: 'Time to Hack',
   photoURL: null
