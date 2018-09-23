@@ -48,7 +48,7 @@ $(document).ready(function(){
       displayName: data.firstName + ' ' + data.lastName,
       photoURL: null
     };
-    if( data.email != '' && password != ''  && cPassword === password ){
+    if( data.email !== '' && password !==''  && cPassword === password ){
       Auth.createUserWithEmailAndPassword(data.email, password)
         .then(function() { user = Auth.currentUser })
         .then(function() { return sendEmailVerification(data) })
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
     var email = $('#loginEmail').val();
     var password = $('#loginPassword').val();
-    if( email != '' && password != '' ){
+    if( email !== '' && password !== '' ){
       Auth.signInWithEmailAndPassword(email, password)
         .then(function(authData) {
           user = authData;
