@@ -232,4 +232,13 @@ $(document).ready(function(){
     }
   }
 });
+const profileData = {
+  displayName: 'Time to Hack',
+  photoURL: null
+}
+const user = firebase.auth().currentUser;
 
+user.updateProfile({
+  displayName: profileData.displayName || user.displayName,
+  photoURL: profileData.photoURL || user.photoURL
+});
