@@ -162,12 +162,6 @@ $(document).ready(function(){
       Auth.currentUser.linkWithPopup(new provider).then(console.log)
     }
   })
-
-  // Prevent User from adding contact if email is not verified
- 
-    }
-  })
-
   //save contact
   $(forms.addContact).on('submit', function( event ) {  
     event.preventDefault();
