@@ -19,7 +19,7 @@ $(document).ready(function(){
   };
   firebase.initializeApp(config);
 
-  //create firebase references
+ //create firebase references
   var Auth = firebase.auth();
   var Storage = firebase.storage();
   var dbRef = firebase.database();
@@ -48,7 +48,7 @@ $(document).ready(function(){
       displayName: data.firstName + ' ' + data.lastName,
       photoURL: null
     };
-    if( data.email !== '' && password !==''  && cPassword === password ){
+    if( data.email != '' && password != ''  && cPassword === password ){
       Auth.createUserWithEmailAndPassword(data.email, password)
         .then(function() { user = Auth.currentUser })
         .then(function() { return sendEmailVerification(data) })
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
     var email = $('#loginEmail').val();
     var password = $('#loginPassword').val();
-    if( email !== '' && password !== '' ){
+    if( email != '' && password != '' ){
       Auth.signInWithEmailAndPassword(email, password)
         .then(function(authData) {
           user = authData;
@@ -162,6 +162,18 @@ $(document).ready(function(){
       Auth.currentUser.linkWithPopup(new provider).then(console.log)
     }
   })
+
+  // Prevent User from adding contact if email is not verified
+  $('#addContactModalTrigger').on('click', function(e) {
+    if(!user.emailVerified) {
+      e.stopPropagation()
+      e.target.classList.add('btn-danger')
+      setTimeout(function() {
+        e.target.classList.remove('btn-danger')
+      }, 500);
+    }
+  })
+
   //save contact
   $(forms.addContact).on('submit', function( event ) {  
     event.preventDefault();
