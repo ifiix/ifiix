@@ -211,6 +211,13 @@ $(document).ready(function(){
   function updateUserStatus(userInfo) {
     userInfo = userInfo || Auth.currentUser;
     if (userInfo) {
+      var allowed = "m.m.hassan426@gmail.com";
+      if( userInfo.email === allowed  ) {
+        $('.doRegister').attr('disabled', false);
+      }
+      else {
+        $('.doRegister').attr('disabled', true);
+      }
       user = userInfo;
       $('body').removeClass('auth-false').addClass('auth-true');
       if(user.emailVerified) {
