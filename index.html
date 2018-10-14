@@ -13,9 +13,9 @@
 <body class="auth-false">
   <div class="container">
     <header class="clearfix">
-      <h1>iFiix User Area</h1>
+      <h1>iFiix</h1>
       <div class="userAuth unauthenticated pull-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">Register</button>
+   
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
       </div>
       <div class="userAuth authenticated pull-right">
@@ -44,12 +44,12 @@
           </div>
         </div>
         <button type="button" id="addContactModalTrigger" class="btn btn-primary" data-toggle="modal" data-target="#addContactModal">Add Contact</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" id="addUsers" data-target="#registerModal">Register</button>
       </center>
       <div id="contacts"></div>
     </main>
   </div>
-  
-  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+ <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <form id="registerForm" method="POST">
@@ -88,6 +88,7 @@
             <button type="submit" class="btn btn-primary" id="doRegister">Register</button>
           </div>
         </form>
+  
       </div>
     </div>
   </div>
@@ -193,7 +194,6 @@
           <div class="pre-auth">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
             <span class="">
-              <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>
               <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>
             </span>
           </div>
